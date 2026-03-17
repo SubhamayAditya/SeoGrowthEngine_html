@@ -1,0 +1,910 @@
+/* ==========================================================================
+   CSS Variables & Configuration
+   ========================================================================== */
+:root {
+    /* Brand Colors */
+    --brand-blue: #3E38B6;
+    /* Logo and button background */
+    --brand-blue-hover: #2e298f;
+    --brand-orange: #f26440;
+    /* Logo accent arrow */
+
+    /* Text Colors */
+    --text-dark: #111827;
+    --text-muted: #6b7280;
+
+    /* Backgrounds & Borders */
+    --bg-light: #f3f4f6;
+    --border-nav: #e5e7eb;
+}
+
+/* ==========================================================================
+   Global Reset & Defaults
+   ========================================================================== */
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased;
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   Typography & Navigation Elements
+   ========================================================================== */
+
+/* Navbar Container */
+.navbar {
+    border-bottom: 1px solid var(--border-nav);
+    background-color: #ffffff;
+}
+
+/* Brand Logo */
+.logo-seq {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--brand-blue);
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.logo-arrow {
+    position: absolute;
+    top: -2px;
+    right: -18px;
+    color: var(--brand-orange);
+}
+
+.logo-subtext {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* Nav Links */
+.navbar-nav .nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--brand-blue);
+}
+
+.dropdown-toggle::after {
+    vertical-align: middle;
+    border-top: 0.35em solid;
+    border-right: 0.35em solid transparent;
+    border-bottom: 0;
+    border-left: 0.35em solid transparent;
+    margin-left: 0.4em;
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn-login {
+    color: var(--text-dark);
+    background-color: transparent;
+    border: 1px solid var(--border-nav);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0.5rem 1.75rem;
+    transition: all 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: var(--bg-light);
+    border-color: #d1d5db;
+}
+
+.btn-signup {
+    color: #ffffff;
+    background-color: var(--brand-blue);
+    border: 1px solid var(--brand-blue);
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0.5rem 1.75rem;
+    transition: all 0.2s ease;
+}
+
+.btn-signup:hover {
+    color: #ffffff;
+    background-color: var(--brand-blue-hover);
+    border-color: var(--brand-blue-hover);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero-container {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+.hero-badge {
+    background-color: #f1f2f4 !important;
+    /* Soft gray exact to design */
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50rem;
+    /* Creates the pill shape */
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    color: #050505;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 95%;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 991.98px) {
+    .hero-container {
+        padding-top: 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.75rem;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .hero-description {
+        max-width: 100%;
+        margin-top: 1.5rem !important;
+    }
+
+    .nav-buttons {
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-title {
+        font-size: 2.25rem;
+    }
+}
+
+/* ==========================================================================
+   Showcase Section
+   ========================================================================== */
+.showcase-container {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.showcase-card {
+    background: #191238;
+    /* Deep purple background */
+    background-image:
+        radial-gradient(ellipse at 70% 30%, rgba(138, 43, 226, 0.5) 0%, transparent 60%),
+        radial-gradient(ellipse at 30% 80%, rgba(62, 56, 182, 0.6) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 90%, rgba(200, 80, 255, 0.4) 0%, transparent 50%);
+    box-shadow: 0 25px 50px -12px rgba(17, 7, 43, 0.3);
+    min-height: 550px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Wavy abstract backgound simulation */
+.showcase-wave-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(45deg,
+            rgba(255, 255, 255, 0.02) 0px,
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 14px),
+        repeating-linear-gradient(-45deg,
+            rgba(255, 255, 255, 0.02) 0px,
+            rgba(255, 255, 255, 0.02) 1px,
+            transparent 1px,
+            transparent 14px);
+    opacity: 0.7;
+    pointer-events: none;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 90%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 90%);
+}
+
+/* Showcase Pills/Tags */
+.showcase-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    max-width: 95%;
+}
+
+.showcase-tag {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #e5e7eb;
+    font-weight: 500;
+    font-size: 11px;
+    padding: 0.65rem 1.25rem;
+    border-radius: 50rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+}
+
+.showcase-tag:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.showcase-tag.active {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Typography & Content Block */
+.showcase-heading {
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.btn-showcase-arrow {
+    width: 65px;
+    height: 65px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 1rem;
+}
+
+.btn-showcase-arrow:hover,
+.btn-showcase-arrow:focus {
+    background: #ffffff;
+    color: #191238;
+    transform: scale(1.05) translate(2px, -2px);
+    /* Creates a subtle arrow motion */
+}
+
+/* Dashboard Mockup Panel */
+.dashboard-preview-col {
+    perspective: 1000px;
+    height: 100%;
+    min-height: 450px;
+}
+
+/* Panel starts partially off screen / overlapping layout */
+.dashboard-preview-card {
+    width: 130%;
+    right: -25%;
+    top: 50%;
+    transform: translateY(-50%) rotateY(-6deg) rotateX(2deg);
+    height: 480px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        -20px 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Inner mock google console stylings */
+.dashboard-body {
+    height: calc(100% - 55px);
+}
+
+.dashboard-sidebar {
+    background-color: #f8f9fa;
+}
+
+.dashboard-main {
+    background-color: #ffffff;
+}
+
+.hover-bg:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+    cursor: pointer;
+}
+
+.title-settings {
+    font-size: 20px;
+}
+
+.label-settings {
+    font-size: 12px;
+}
+
+.settings-item {
+    font-size: 13px;
+}
+
+.settings-item span.text-dark {
+    font-weight: 500;
+}
+
+.blurred-text {
+    filter: blur(4px);
+    user-select: none;
+    -webkit-user-select: none;
+    opacity: 0.6;
+}
+
+/* Responsive constraints */
+@media (max-width: 991.98px) {
+    .showcase-card {
+        min-height: auto;
+    }
+
+    .showcase-heading {
+        font-size: 1.25rem;
+    }
+
+    .dashboard-preview-col {
+        min-height: 380px;
+        margin-top: 3rem !important;
+    }
+
+    .dashboard-preview-card {
+        position: relative;
+        width: 100%;
+        right: 0;
+        top: 0;
+        transform: none !important;
+        height: 400px;
+    }
+
+    .dashboard-preview-card:hover {
+        transform: translateY(-5px) !important;
+    }
+
+    .settings-item {
+        font-size: 12px;
+    }
+}
+
+/* ==========================================================================
+   Statistics Cards Section
+   ========================================================================== */
+.stats-container {
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    min-height: 280px;
+}
+
+/* The first blue brand card */
+.brand-card {
+    background-color: var(--brand-blue);
+}
+
+.brand-card-text {
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+}
+
+/* Wavy ripple pattern simulation on brand card */
+.brand-card-bg-pattern {
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.ripple-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.c1 {
+    width: 40px;
+    height: 40px;
+}
+
+.c2 {
+    width: 80px;
+    height: 80px;
+}
+
+.c3 {
+    width: 120px;
+    height: 120px;
+}
+
+.c4 {
+    width: 160px;
+    height: 160px;
+}
+
+.c5 {
+    width: 200px;
+    height: 200px;
+}
+
+/* The data stat cards */
+.data-card {
+    background-color: #f4f5f5;
+    /* Off-white precise match */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.data-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 3.5rem;
+    letter-spacing: -2px;
+    color: #050505;
+}
+
+@media (max-width: 1199.98px) {
+    .stat-value {
+        font-size: 2.75rem;
+    }
+
+    .brand-card-text {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .stat-card {
+        min-height: 220px;
+        padding: 2.5rem !important;
+    }
+}
+
+/* ==========================================================================
+   Partner Logos Slider
+   ========================================================================== */
+.partner-logos-wrapper {
+    background-color: transparent;
+    border-color: #f0f0f0 !important;
+}
+
+/* Base track setup */
+.partner-slider-track {
+    width: max-content;
+    /* Ensure it stays flat */
+    animation: slide-left 35s linear infinite;
+}
+
+/* Track pauses when hovered for usability */
+.partner-logos-wrapper:hover .partner-slider-track {
+    animation-play-state: paused;
+}
+
+/* Fading masks on edges for smooth entry/exit */
+.slider-mask-left,
+.slider-mask-right {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.slider-mask-left {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.slider-mask-right {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
+}
+
+.partner-slide img:hover {
+    filter: grayscale(0%) !important;
+    opacity: 1 !important;
+    transform: scale(1.05);
+}
+
+/* Continuous scroll animation */
+@keyframes slide-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        /* Translates exactly half its width to seamlessly loop back to start */
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   Agency Pack Features Section
+   ========================================================================== */
+.agency-features-container {
+    background-color: #f1f0f8;
+    /* Light purple background matching image */
+}
+
+.agency-title {
+    font-size: 2.75rem;
+    letter-spacing: -1px;
+}
+
+.agency-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.agency-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08) !important;
+}
+
+.icon-wrapper svg {
+    transition: transform 0.3s ease;
+}
+
+.agency-card:hover .icon-wrapper svg {
+    transform: scale(1.1);
+}
+
+@media (max-width: 991.98px) {
+    .agency-title {
+        font-size: 2.25rem;
+    }
+}
+
+/* ==========================================================================
+   Secondary Agency Pack Section
+   ========================================================================== */
+.secondary-agency-container {
+    background-color: #ffffff;
+    /* White bg instead of light purple */
+}
+
+.checklist-item {
+    background-color: #f6f7f8 !important;
+    /* Soft gray for pill background */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.checklist-item:hover {
+    transform: translateX(4px);
+    background-color: #eeeff1 !important;
+}
+
+.checklist-icon {
+    background-color: #0b9e1d !important;
+    /* Bright green check exactly matching design */
+}
+
+/* ==========================================================================
+   Testimonial Carousel Section
+   ========================================================================== */
+.testimonial-track {
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
+}
+
+.testimonial-card {
+    background-color: #f9f9f9 !important;
+    /* Soft card background */
+    border: 1px solid transparent;
+}
+
+.testimonial-controls button {
+    opacity: 0.7;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.testimonial-controls button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.testimonial-controls button:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+@media (max-width: 767.98px) {
+    .testimonial-card {
+        min-width: 300px !important;
+        max-width: 300px !important;
+    }
+}
+
+/* ==========================================================================
+   Info Cards Section (4 columns)
+   ========================================================================== */
+.info-card {
+    background-color: #f3f1fa !important;
+    /* Soft purple background matching the design */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05) !important;
+}
+
+.info-card-bg-pattern {
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.info-card-bg-pattern .ripple-circle {
+    border-color: #3e38b6;
+    /* Use primary brand blue/purple for the stroke */
+}
+
+/* ==========================================================================
+   Call To Action Banner Section
+   ========================================================================== */
+.cta-banner {
+    background-color: var(--brand-blue);
+    /* Match primary brand blue exactly */
+    min-height: 380px;
+}
+
+.cta-bg-pattern {
+    width: 300px;
+    height: 300px;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.cta-bg-pattern .ripple-circle {
+    border-color: #ffffff;
+    /* White strokes on the blue background */
+}
+
+/* Position top-left pattern */
+.pattern-top-left {
+    top: -100px;
+    left: -100px;
+}
+
+/* Position bottom-right pattern */
+.pattern-bottom-right {
+    bottom: -100px;
+    right: -100px;
+}
+
+.max-w-md {
+    max-width: 700px;
+}
+
+.cta-banner .btn-light {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-banner .btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   Footer Section
+   ========================================================================== */
+.footer-link {
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.footer-link:hover {
+    color: var(--brand-blue) !important;
+    transform: translateX(3px);
+}
+
+.social-icon {
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.social-icon:hover {
+    color: var(--brand-blue) !important;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Updated Feature Showcase Section (Dark Mode)
+   ========================================================================== */
+.new-dark-showcase {
+    background-color: #1a0b2e;
+    /* Deep dark purple base */
+    min-height: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dark-showcase-bg {
+    filter: saturate(1.2) contrast(1.1);
+    pointer-events: none;
+}
+
+.new-showcase-tags {
+    /* Ensure the wrapper respects max-width to naturally wrap the tags like the image */
+    max-width: 480px;
+}
+
+.badge.glass-tag {
+    background: rgba(255, 255, 255, 0.15);
+    /* Translucent white/purple */
+    color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 50rem;
+    /* Full pill shape */
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.badge.glass-tag:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+.badge.glass-tag.active {
+    background: #ffffff !important;
+    color: #1a0b2e !important;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn-showcase-arrow:hover {
+    background-color: white;
+    color: #1a0b2e !important;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+/* Showcase Mockup Image Styling */
+@media (min-width: 992px) {
+    .showcase-mockup-img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 50%;
+        /* Position half-way across */
+        width: 55%;
+        /* Bleed off the right edge naturally */
+        height: auto;
+        object-fit: contain;
+        border-radius: 16px 0 0 16px;
+        /* Smooth out both left corners */
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-right: none;
+        box-shadow: -15px 0 35px rgba(0, 0, 0, 0.3);
+        /* Strong shadow casting inward */
+    }
+}
+
+@media (max-width: 991.98px) {
+    .showcase-mockup-img {
+        width: calc(100% + 1.5rem);
+        margin-right: -1.5rem;
+        /* Slight right bleed */
+        margin-bottom: -2.5rem;
+        /* Generous bottom bleed */
+        border-radius: 16px 0 0 16px;
+        /* Show both left corners on mobile too if possible */
+        height: auto;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-right: none;
+        box-shadow: -5px -5px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* ==========================================================================
+   Hreflang Tag Tester Page Styles
+   ========================================================================== */
+
+/* Main Container overrides */
+.tool-container {
+    background-color: #f8f9fc !important; /* Soft light blue/grey bg */
+}
+
+/* Custom form control padding to match design */
+.tool-container .form-control,
+.tool-container .form-select {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+}
+
+/* Table overrides for cleanliness */
+.test-results-section .table th {
+    letter-spacing: 0.5px;
+}
+.test-results-section .table td {
+    vertical-align: middle;
+}
+
+/* Informational Timeline Styles */
+.hreflang-timeline {
+    /* Base positioning context already set inline, but adding here just in case */
+    position: relative;
+}
+
+@media (max-width: 575.98px) {
+    /* Adjust the connecting line left offset on very small screens if padding gets tight */
+    .timeline-line {
+        left: calc(0.5rem - 1px) !important;
+    }
+    
+    /* Pull the text and container back closer to the icon on mobile */
+    .timeline-node {
+        padding-left: 3.5rem !important;
+    }
+    
+    .timeline-node .timeline-icon {
+        left: -0.5rem !important; /* Readjust icon position to sit on the new line pos */
+    }
+    
+    .timeline-node h2 {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* FAQs Accordion Styles */
+.custom-accordion .faq-item {
+    transition: background-color 0.2s ease-in-out;
+}
+
+.custom-accordion .faq-item:hover {
+    background-color: #f1f3f8 !important; /* Slightly darker on hover for affordance */
+}
+
+.custom-accordion .cursor-pointer {
+    cursor: pointer;
+}
+
+.custom-accordion .faq-answer {
+    /* Smooth transitions handled by JS, but adding typography tweaks here */
+    color: #4b5563; /* text-secondary equivalent */
+}
+
+.custom-accordion .faq-icon svg {
+    transition: transform 0.2s ease-in-out;
+}

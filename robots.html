@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SEQ - Robots.txt Tester Tool">
+    <title>Robots.txt Tester - SEQ</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white">
+
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg py-3">
+            <div class="container custom-nav-container">
+                <!-- Logo -->
+                <a class="navbar-brand text-decoration-none d-flex flex-column align-items-start" href="#">
+                    <div class="position-relative">
+                        <span class="logo-seq">SEQ</span>
+                        <svg class="logo-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="19" x2="19" y2="5"></line>
+                            <polyline points="9 5 19 5 19 15"></polyline>
+                        </svg>
+                    </div>
+                    <span class="logo-subtext">GROWTHENGINE</span>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links & Buttons -->
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown px-2">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Features
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item" href="#">AI SEO</a></li>
+                                <li><a class="dropdown-item" href="#">Generative Campaigns</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" href="#">Plans & Pricing</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-3 nav-buttons">
+                        <a href="#" class="btn btn-login rounded-pill">Login</a>
+                        <a href="#" class="btn btn-signup rounded-pill">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content AREA -->
+    <main class="container py-5 my-md-4">
+        <!-- Page Header -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <span class="badge rounded-pill bg-light text-secondary px-3 py-2 fw-medium mb-3 border" style="font-size: 0.8rem; letter-spacing: 0.5px;">FREE SEO TOOLS</span>
+                <h1 class="fw-bold text-dark display-5 mb-0" style="letter-spacing: -1px;">Robots.txt Tester</h1>
+            </div>
+        </div>
+
+        <!-- Main Tool Container -->
+        <div class="tool-container bg-light rounded-4 p-4 p-lg-5 mb-5 shadow-sm" style="background-color: #f8f9fc !important;">
+            
+            <!-- Input Form Section -->
+            <form id="robotsForm">
+                <div class="row g-3 align-items-end mb-5">
+                    
+                    <!-- URL Input -->
+                    <div class="col-12 col-md-6">
+                        <label for="urlInput" class="form-label text-secondary small fw-medium mb-2">URL or domain</label>
+                        <input type="url" class="form-control form-control-lg border-0 shadow-sm" id="urlInput" placeholder="Enter a URL or domain" required style="font-size: 0.95rem;">
+                    </div>
+
+                    <!-- User Agent Select -->
+                    <div class="col-12 col-md-4">
+                        <label for="userAgentSelect" class="form-label text-secondary small fw-medium mb-2">User Agent</label>
+                        <select class="form-select form-select-lg border-0 shadow-sm text-secondary" id="userAgentSelect" style="font-size: 0.95rem;">
+                            <option selected>Select user agent</option>
+                            <option value="1">Googlebot</option>
+                            <option value="2">Bingbot</option>
+                            <option value="3">Chrome</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-12 col-md-2">
+                        <button type="submit" class="btn btn-primary w-100 btn-lg rounded-pill fw-medium" style="background-color: #3b28b5; border-color: #3b28b5; font-size: 0.95rem;">Submit</button>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Test Results Section -->
+            <div class="test-results-section mt-5 pt-3">
+                <h3 class="text-center fw-bold text-dark mb-5" style="letter-spacing: -0.5px;">Test Results</h3>
+                
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
+                        <span class="fw-semibold text-dark fs-5">Your robots.txt file</span>
+                        <span class="badge px-3 py-2 fw-medium text-dark rounded-2" style="background-color: #e1dff3; font-size: 0.85rem;">https://www.sbnewsroom.com/</span>
+                    </div>
+                    <!-- Action Icons -->
+                    <div class="d-flex align-items-center gap-3 mt-3 mt-md-0 text-secondary">
+                        <svg class="cursor-pointer" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <svg class="cursor-pointer" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Code Editor View -->
+                <div class="bg-white rounded-3 shadow-sm pt-4 pb-4 px-3 mb-5 overflow-hidden">
+                    <div class="d-flex" style="font-family: monospace; font-size: 0.85rem; line-height: 1.6;">
+                        <!-- Line Numbers -->
+                        <div class="text-end pe-4 user-select-none" style="width: 50px; color: #718096 !important;">
+                            1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15
+                        </div>
+                        <!-- Code Output -->
+                        <div class="text-dark flex-grow-1 overflow-auto" style="white-space: pre; color: #4a5568 !important;">
+# START YOAST BLOCK
+# ---------------------------
+User-agent: *
+Disallow: /category/blog/
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /?s=
+Disallow: ?nonamp=1
+Disallow: /wp-comments-post.php
+Disallow: /wp-content/plugins/
+Sitemap: https://www.sbnewsroom.com/sitemap_index.xml
+# ---------------------------
+# END YOAST BLOCK
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Validation Checks -->
+                <div class="d-flex flex-column gap-3 mt-4">
+                    <div class="d-flex align-items-center gap-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span class="text-secondary small fw-medium" style="font-size: 0.9rem;">Your robots.txt is valid</span>
+                    </div>
+                    <div class="d-flex align-items-center gap-2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span class="text-secondary small fw-medium" style="font-size: 0.9rem;">Your robots.txt file has valid syntax</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-5 pb-4">
+        <div class="container">
+            <!-- Footer Main Content -->
+            <div class="row w-100 g-4 mb-5 mx-0 pt-4">
+                
+                <!-- Logo & Description Column (Matches design placement) -->
+                <div class="col-12 col-lg-5 pe-lg-5 mb-4 mb-lg-0">
+                    <a class="navbar-brand text-decoration-none d-flex flex-column align-items-start mb-4" href="#">
+                        <div class="position-relative">
+                            <span class="logo-seq">SEQ</span>
+                            <!-- Matching brand arrow styling -->
+                            <svg class="logo-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="19" x2="19" y2="5"></line>
+                                <polyline points="9 5 19 5 19 15"></polyline>
+                            </svg>
+                        </div>
+                        <span class="logo-subtext">GROWTHENGINE</span>
+                    </a>
+                    
+                    <p class="text-secondary small mb-0 lh-lg" style="max-width: 320px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+                    </p>
+                </div>
+
+                <!-- Links Columns Container -->
+                <div class="col-12 col-lg-7">
+                    <div class="row row-cols-2 row-cols-sm-3 g-4">
+                        
+                        <!-- Links Column 1: Resources -->
+                        <div class="col">
+                            <h5 class="fw-bold mb-4 fs-6 text-dark" style="letter-spacing: -0.2px;">Resources</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Blog</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Case Studies</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">eBooks</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Help Center</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Links Column 2: Support -->
+                        <div class="col">
+                            <h5 class="fw-bold mb-4 fs-6 text-dark" style="letter-spacing: -0.2px;">Support</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Contact Us</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">FAQs</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">API Documentation</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Community Forum</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Links Column 3: Legal -->
+                        <div class="col">
+                            <h5 class="fw-bold mb-4 fs-6 text-dark" style="letter-spacing: -0.2px;">Legal</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Privacy Policy</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer (Copyright & Socials) -->
+            <div class="row pt-4 border-top" style="border-color: #f1f2f4 !important;">
+                <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="text-secondary small mb-0" style="font-size: 0.8rem;">
+                        © 2026. All rights reserved by <span class="text-dark fw-medium">Redhatmedia.</span>
+                    </p>
+                </div>
+                <!-- Social Icons -->
+                <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end gap-3">
+                    <a href="#" class="text-secondary social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="text-secondary social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="text-secondary social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" class="text-secondary social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom User Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

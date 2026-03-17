@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SEQ - Hreflang Tag Tester Tool">
+    <title>Hreflang Tag Tester - SEQ</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-white">
+
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg py-3">
+            <div class="container custom-nav-container">
+                <!-- Logo -->
+                <a class="navbar-brand text-decoration-none d-flex flex-column align-items-start" href="#">
+                    <div class="position-relative">
+                        <span class="logo-seq">SEQ</span>
+                        <svg class="logo-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="19" x2="19" y2="5"></line>
+                            <polyline points="9 5 19 5 19 15"></polyline>
+                        </svg>
+                    </div>
+                    <span class="logo-subtext">GROWTHENGINE</span>
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links & Buttons -->
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown px-2">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Features
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item" href="#">AI SEO</a></li>
+                                <li><a class="dropdown-item" href="#">Generative Campaigns</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item px-2">
+                            <a class="nav-link" href="#">Plans & Pricing</a>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-3 nav-buttons">
+                        <a href="#" class="btn btn-login rounded-pill">Login</a>
+                        <a href="#" class="btn btn-signup rounded-pill">Sign up</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content AREA -->
+    <main class="container py-5 my-md-4">
+        <!-- Page Header -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <span class="badge rounded-pill bg-light text-secondary px-3 py-2 fw-medium mb-3 border" style="font-size: 0.8rem; letter-spacing: 0.5px;">FREE SEO TOOLS</span>
+                <h1 class="fw-bold text-dark display-5 mb-0" style="letter-spacing: -1px;">hreflang tag tester</h1>
+            </div>
+        </div>
+
+        <!-- Main Tool Container -->
+        <div class="tool-container bg-light rounded-4 p-4 p-lg-5 mb-5 shadow-sm" style="background-color: #f8f9fc !important;">
+            
+            <!-- Input Form Section -->
+            <form id="hreflangForm">
+                <div class="row g-3 align-items-end mb-5">
+                    
+                    <!-- URL Input -->
+                    <div class="col-12 col-md-6">
+                        <label for="urlInput" class="form-label text-secondary small fw-medium mb-2">URL or domain</label>
+                        <input type="url" class="form-control form-control-lg border-0 shadow-sm" id="urlInput" placeholder="Enter a URL or domain" required style="font-size: 0.95rem;">
+                    </div>
+
+                    <!-- User Agent Select -->
+                    <div class="col-12 col-md-4">
+                        <label for="userAgentSelect" class="form-label text-secondary small fw-medium mb-2">User Agent</label>
+                        <select class="form-select form-select-lg border-0 shadow-sm text-secondary" id="userAgentSelect" style="font-size: 0.95rem;">
+                            <option selected>Select user agent</option>
+                            <option value="1">Googlebot</option>
+                            <option value="2">Bingbot</option>
+                            <option value="3">Chrome</option>
+                        </select>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="col-12 col-md-2">
+                        <button type="submit" class="btn btn-primary w-100 btn-lg rounded-pill fw-medium" style="background-color: #3b28b5; border-color: #3b28b5; font-size: 0.95rem;">Test URL</button>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Test Results Section -->
+            <div class="test-results-section mt-5 pt-3">
+                <h3 class="text-center fw-bold text-dark mb-5" style="letter-spacing: -0.5px;">Test Results</h3>
+                
+                <div class="d-flex flex-column flex-md-row align-items-md-center gap-3 mb-4">
+                    <span class="fw-semibold text-dark fs-5">Your hreflang tag tester file</span>
+                    <span class="badge px-3 py-2 fw-medium text-dark rounded-2" style="background-color: #e1dff3; font-size: 0.85rem;">https://www.sbnewsroom.com/</span>
+                </div>
+
+                <!-- Results Table -->
+                <div class="table-responsive bg-white rounded-4 shadow-sm p-4">
+                    <table class="table table-borderless align-middle text-center mb-0" style="min-width: 800px;">
+                        <thead class="border-bottom">
+                            <tr>
+                                <th scope="col" class="text-secondary small fw-semibold pb-3" style="font-size: 0.75rem;">STATUS</th>
+                                <th scope="col" class="text-secondary small fw-semibold pb-3" style="font-size: 0.75rem;">HREFLANG</th>
+                                <th scope="col" class="text-secondary small fw-semibold pb-3" style="font-size: 0.75rem;">ALTERNATE URL</th>
+                                <th scope="col" class="text-secondary small fw-semibold pb-3" style="font-size: 0.75rem;">RETURN TAG</th>
+                                <th scope="col" class="text-secondary small fw-semibold pb-3" style="font-size: 0.75rem;">INDEXABLE</th>
+                                <th scope="col" class="text-secondary small fw-semibold pb-3 text-start" style="font-size: 0.75rem;">ERROR</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="pt-4">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                    </svg>
+                                </td>
+                                <td class="pt-4 text-secondary small">200</td>
+                                <td class="pt-4 text-secondary">-</td>
+                                <td class="pt-4 text-secondary">-</td>
+                                <td class="pt-4 text-secondary">-</td>
+                                <td class="pt-4">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </td>
+                                <td class="pt-4 text-start">
+                                    <span class="d-inline-flex align-items-center gap-2 small" style="color: #3b28b5;">
+                                        <span style="width: 4px; height: 4px; background-color: #212529; border-radius: 50%;"></span>
+                                        No hreflangs found
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Informational Timeline Section -->
+        <div class="row mt-5 pt-4 pb-5">
+            <div class="col-12 col-lg-10 mx-auto position-relative hreflang-timeline pb-4">
+                
+                <!-- Timeline Node 1 -->
+                <div class="timeline-node position-relative mb-5 pe-lg-4" style="padding-left: 4.5rem;">
+                    <!-- Line to next node -->
+                    <div class="timeline-line position-absolute" style="left: calc(1rem - 1px); top: 1rem; bottom: -4rem; width: 2px; background-color: #e5e7eb; z-index: 1;"></div>
+                    <!-- Checkmark Icon -->
+                    <div class="timeline-icon position-absolute rounded-circle d-flex align-items-center justify-content-center bg-white" style="left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 50%; z-index: 2; transform: translateY(0.25rem);">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="background-color: #8c88db; width: 1.75rem; height: 1.75rem;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="fw-medium text-dark mb-3" style="font-size: 1.75rem; letter-spacing: -0.5px;">What is hreflang tag tester</h2>
+                    <p class="text-secondary small lh-lg mb-0" style="font-size: 0.9rem;">
+                        A robots.txt file is a text file placed on a website that tells web crawlers, or "robots," which pages or sections of the website should not be accessed or indexed. The file is used to prevent unwanted traffic to certain parts of a website, such as pages that are still under development or that contain sensitive information. Web crawlers look for the robots.txt file when they first visit a website and follow the instructions in the file when crawling the site.
+                    </p>
+                </div>
+
+                <!-- Timeline Node 2 -->
+                <div class="timeline-node position-relative mb-5 pe-lg-4" style="padding-left: 4.5rem;">
+                    <!-- Line to next node -->
+                    <div class="timeline-line position-absolute" style="left: calc(1rem - 1px); top: 1rem; bottom: -4rem; width: 2px; background-color: #e5e7eb; z-index: 1;"></div>
+                    <!-- Checkmark Icon -->
+                    <div class="timeline-icon position-absolute rounded-circle d-flex align-items-center justify-content-center bg-white" style="left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 50%; z-index: 2; transform: translateY(0.25rem);">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="background-color: #8c88db; width: 1.75rem; height: 1.75rem;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="fw-medium text-dark mb-3" style="font-size: 1.75rem; letter-spacing: -0.5px;">Why Hreflang is Important</h2>
+                    <p class="text-secondary small lh-lg mb-0" style="font-size: 0.9rem;">
+                        A robots.txt file is a text file placed on a website that tells web crawlers, or "robots," which pages or sections of the website should not be accessed or indexed. The file is used to prevent unwanted traffic to certain parts of a website, such as pages that are still under development or that contain sensitive information. Web crawlers look for the robots.txt file when they first visit a website and follow the instructions in the file when crawling the site.
+                    </p>
+                </div>
+
+                <!-- Timeline Node 3 -->
+                <div class="timeline-node position-relative mb-2 pe-lg-4" style="padding-left: 4.5rem;">
+                    <!-- Checkmark Icon -->
+                    <div class="timeline-icon position-absolute rounded-circle d-flex align-items-center justify-content-center bg-white" style="left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 50%; z-index: 2; transform: translateY(0.25rem);">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center" style="background-color: #8c88db; width: 1.75rem; height: 1.75rem;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <h2 class="fw-medium text-dark mb-0" style="font-size: 1.75rem; letter-spacing: -0.5px;">How to Use the Tool</h2>
+                </div>
+            </div>
+
+            <!-- 3-Column Guide Cards Alignment Fix -->
+            <div class="col-12 col-lg-10 mx-auto mt-4 mb-2">
+                <div class="row g-4">
+                    
+                    <!-- Card 1: Input Field Mock -->
+                    <div class="col-12 col-md-4">
+                        <div class="guide-card bg-light rounded-4 p-4 d-flex flex-column h-100 position-relative overflow-hidden" style="background-color: #f8f9fc !important; min-height: 240px;">
+                            <div class="mock-container flex-grow-1 d-flex flex-column justify-content-center w-100">
+                                <div class="mock-input-wrap ms-md-2">
+                                    <p class="text-secondary small fw-medium mb-2" style="font-size: 0.8rem;">URL or domain</p>
+                                    <div class="mock-input bg-white rounded-3 shadow-sm d-flex align-items-center px-3" style="height: 48px; position: relative;">
+                                        <span class="text-muted" style="font-size: 0.85rem;">Enter a URL or domain</span>
+                                        <!-- White fade overlay to simulate clipping -->
+                                        <div class="position-absolute end-0 top-0 h-100 w-25 rounded-end-3" style="background: linear-gradient(to right, transparent, white); pointer-events: none;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 text-center">
+                                <p class="mb-0 text-dark small fw-medium" style="font-size: 0.85rem;">Enter website URL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Button Mock -->
+                    <div class="col-12 col-md-4">
+                        <div class="guide-card bg-light rounded-4 p-4 d-flex flex-column h-100" style="background-color: #f8f9fc !important; min-height: 240px;">
+                            <div class="mock-container flex-grow-1 d-flex align-items-center justify-content-center">
+                                <div class="mock-btn fw-medium text-white d-flex align-items-center justify-content-center shadow-sm" style="background-color: #3b28b5; border-radius: 50px; height: 48px; width: 140px; font-size: 0.95rem;">
+                                    Test URL
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 text-center">
+                                <p class="mb-0 text-dark small fw-medium" style="font-size: 0.85rem;">Click Test URL</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Results Table Mock -->
+                    <div class="col-12 col-md-4">
+                        <div class="guide-card bg-light rounded-4 p-4 d-flex flex-column h-100 position-relative overflow-hidden" style="background-color: #f8f9fc !important; min-height: 240px;">
+                            <div class="mock-container flex-grow-1 d-flex flex-column justify-content-center w-100" style="margin-left: -5%; width: 110% !important;">
+                                <div class="d-flex align-items-center gap-2 mb-3 px-2">
+                                    <span class="text-dark fw-semibold" style="font-size: 0.75rem;">Your hreflang tag tester file</span>
+                                    <span class="badge rounded-1 fw-medium text-dark" style="background-color: #e1dff3; font-size: 0.65rem; padding: 4px 6px;">https://www.sbnewsroom.com/</span>
+                                </div>
+                                <div class="mock-table-wrap bg-white rounded-3 shadow-sm p-3 w-100 position-relative overflow-hidden">
+                                    <!-- Mock Headers -->
+                                    <div class="d-flex mb-3 border-bottom pb-2">
+                                        <div class="text-center" style="width: 33%; font-size: 0.5rem; font-weight: 600; color: #6c757d;">STATUS</div>
+                                        <div class="text-center" style="width: 33%; font-size: 0.5rem; font-weight: 600; color: #6c757d;">HREFLANG</div>
+                                        <div class="text-center" style="width: 33%; font-size: 0.5rem; font-weight: 600; color: #6c757d;">ALTERNATE URL</div>
+                                    </div>
+                                    <!-- Mock Data Row -->
+                                    <div class="d-flex align-items-center">
+                                        <div class="text-center d-flex justify-content-center" style="width: 33%;">
+                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#28a745" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                            </svg>
+                                        </div>
+                                        <div class="text-center text-secondary" style="width: 33%; font-size: 0.6rem;">200</div>
+                                        <div class="text-center text-secondary" style="width: 33%; font-size: 0.6rem;">-</div>
+                                    </div>
+                                    <!-- White fade overlay for right side -->
+                                    <div class="position-absolute end-0 top-0 h-100 w-25" style="background: linear-gradient(to right, transparent, rgba(255,255,255,1)); pointer-events: none;"></div>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-4 text-center position-relative z-1">
+                                <p class="mb-0 text-dark small fw-medium" style="font-size: 0.85rem;">View detected hreflang tags and issues</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQs Section -->
+        <div class="row mt-5 pt-5 pb-5 mb-5 border-top border-light">
+            <div class="col-12 col-lg-10 mx-auto">
+                <p class="text-secondary small mb-2" style="font-size: 0.85rem;">FAQs</p>
+                <h2 class="display-6 fw-medium text-dark mb-5" style="letter-spacing: -1px; line-height: 1.2;">
+                    Frequently Asked Questions<br>About hreflang tag tester
+                </h2>
+
+                <div class="custom-accordion" id="faqAccordion">
+                    
+                    <!-- FAQ Item 1 (Active) -->
+                    <div class="faq-item active bg-light rounded-4 mb-3 p-4" style="background-color: #f8f9fc !important;">
+                        <div class="faq-header d-flex justify-content-between align-items-center cursor-pointer" onclick="toggleFaq(this)">
+                            <h3 class="faq-question fw-medium text-dark mb-0 fs-6">How do I find the robots.txt file for a website?</h3>
+                            <div class="faq-icon text-secondary">
+                                <!-- Minus/X icon for active state -->
+                                <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                <!-- Plus icon for inactive state -->
+                                <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer mt-3" style="display: block;">
+                            <p class="text-secondary small lh-lg mb-0" style="font-size: 0.85rem;">
+                                A robots.txt file is a text file placed on a website that tells web crawlers, or "robots," which pages or sections of the website should not be accessed or indexed. The file is used to prevent unwanted traffic to certain parts of a website, such as pages that are still under development or that contain sensitive information. Web crawlers look for the robots.txt file when they first visit a website and follow the instructions in the file when crawling the site.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item bg-light rounded-4 mb-3 p-4" style="background-color: #f8f9fc !important;">
+                        <div class="faq-header d-flex justify-content-between align-items-center cursor-pointer" onclick="toggleFaq(this)">
+                            <h3 class="faq-question fw-medium text-dark mb-0 fs-6">What is the "Disallow" directive in a robots.txt file?</h3>
+                            <div class="faq-icon text-secondary">
+                                <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer mt-3" style="display: none;">
+                            <p class="text-secondary small lh-lg mb-0" style="font-size: 0.85rem;">
+                                The "Disallow" directive tells a web crawler not to visit a specific path or file. For example, `Disallow: /private/` prevents bots from accessing any URL that starts with `/private/`.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item bg-light rounded-4 mb-3 p-4" style="background-color: #f8f9fc !important;">
+                        <div class="faq-header d-flex justify-content-between align-items-center cursor-pointer" onclick="toggleFaq(this)">
+                            <h3 class="faq-question fw-medium text-dark mb-0 fs-6">How can I make sure that web crawlers are following the instructions in my robots.txt file?</h3>
+                            <div class="faq-icon text-secondary">
+                                <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer mt-3" style="display: none;">
+                            <p class="text-secondary small lh-lg mb-0" style="font-size: 0.85rem;">
+                                You can use specialized testing tools built into interfaces like Google Search Console to verify how Googlebot and other major crawlers interpret the directives you set in your file.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item bg-light rounded-4 mb-3 p-4" style="background-color: #f8f9fc !important;">
+                        <div class="faq-header d-flex justify-content-between align-items-center cursor-pointer" onclick="toggleFaq(this)">
+                            <h3 class="faq-question fw-medium text-dark mb-0 fs-6">Can I use a robots.txt file to block specific IP addresses from accessing my website?</h3>
+                            <div class="faq-icon text-secondary">
+                                <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                                <svg class="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-answer mt-3" style="display: none;">
+                            <p class="text-secondary small lh-lg mb-0" style="font-size: 0.85rem;">
+                                No, robots.txt is strictly for crawler directives. To block specific IP addresses or apply geographic blocks, you must use server-level configurations (like `.htaccess` or Nginx rules) or a web application firewall.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-5 pb-4">
+        <div class="container">
+            <!-- Footer Main Content -->
+            <div class="row w-100 g-4 mb-5 mx-0 pt-4">
+                
+                <!-- Logo & Description Column (Matches design placement) -->
+                <div class="col-12 col-lg-5 pe-lg-5 mb-4 mb-lg-0">
+                    <a class="navbar-brand text-decoration-none d-flex flex-column align-items-start mb-4" href="#">
+                        <div class="position-relative">
+                            <span class="logo-seq">SEQ</span>
+                            <!-- Matching brand arrow styling -->
+                            <svg class="logo-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="19" x2="19" y2="5"></line>
+                                <polyline points="9 5 19 5 19 15"></polyline>
+                            </svg>
+                        </div>
+                        <span class="logo-subtext">GROWTHENGINE</span>
+                    </a>
+                    
+                    <p class="text-secondary small mb-0 lh-lg" style="max-width: 320px;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+                    </p>
+                </div>
+
+                <!-- Links Columns Container -->
+                <div class="col-12 col-lg-7">
+                    <div class="row row-cols-2 row-cols-sm-3 g-4">
+                        
+                        <!-- Links Column 1: Resources -->
+                        <div class="col">
+                            <h5 class="fw-bold mb-4 fs-6 text-dark" style="letter-spacing: -0.2px;">Resources</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Blog</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Case Studies</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">eBooks</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Help Center</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Links Column 2: Support -->
+                        <div class="col">
+                            <h5 class="fw-bold mb-4 fs-6 text-dark" style="letter-spacing: -0.2px;">Support</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Contact Us</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">FAQs</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">API Documentation</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Community Forum</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Links Column 3: Legal -->
+                        <div class="col">
+                            <h5 class="fw-bold mb-4 fs-6 text-dark" style="letter-spacing: -0.2px;">Legal</h5>
+                            <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Privacy Policy</a></li>
+                                <li><a href="#" class="text-secondary text-decoration-none small footer-link">Cookie Policy</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer (Copyright & Socials) -->
+            <div class="row pt-4 border-top" style="border-color: #f1f2f4 !important;">
+                <div class="col-12 col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="text-secondary small mb-0" style="font-size: 0.8rem;">
+                        © 2026. All rights reserved by <span class="text-dark fw-medium">Redhatmedia.</span>
+                    </p>
+                </div>
+                <!-- Social Icons -->
+                <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end gap-3">
+                    <a href="#" class="text-secondary social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="#" class="text-secondary social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="text-secondary social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="#" class="text-secondary social-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmxc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Custom User Scripts -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
