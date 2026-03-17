@@ -205,6 +205,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 9. Meta Tag Checker Form Submission
+    const metatagForm = document.getElementById('metatagForm');
+    if (metatagForm) {
+        metatagForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent page reload
+            console.log('Meta Tag form submitted via AJAX.');
+        });
+    }
+
 });
 
 /**
