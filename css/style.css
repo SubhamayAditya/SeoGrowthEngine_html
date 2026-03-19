@@ -908,3 +908,206 @@ body {
 .custom-accordion .faq-icon svg {
     transition: transform 0.2s ease-in-out;
 }
+
+/* ==========================================================================
+   Blog Listing Styles
+   ========================================================================== */
+.blog-card-title {
+    transition: color 0.15s ease-in-out, text-decoration-color 0.15s ease-in-out;
+}
+
+.blog-card:hover .blog-card-title {
+    text-decoration: underline !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: 3px;
+    color: #3b28b5 !important;
+}
+
+.blog-card img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover img {
+    transform: translateY(-2px);
+    box-shadow: 0 .25rem .75rem rgba(0,0,0,.08) !important;
+}
+
+/* ==========================================================================
+   Table of Contents Sidebar
+   ========================================================================== */
+.toc-sidebar {
+    padding-right: 1.5rem;
+}
+
+.toc-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #050505;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.toc-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.toc-item {
+    margin-bottom: 1.25rem;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.toc-link {
+    font-size: 0.85rem;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: block;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.toc-link:hover {
+    color: #3b28b5;
+}
+
+.toc-item.active .toc-link {
+    color: #050505;
+    font-weight: 600;
+}
+
+/* Vertical indicator for active TOC item */
+.toc-item.active::before {
+    content: "";
+    position: absolute;
+    left: -0.75rem;
+    top: 2px;
+    bottom: 2px;
+    width: 2.5px;
+    background-color: #050505;
+}
+
+article p {
+    font-size: 1.05rem;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   Blog Post Footer & Comments
+   ========================================================================== */
+.tag-pill {
+    font-size: 0.8rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.tag-pill-primary {
+    background-color: #3b28b5;
+    color: #fff;
+    border: 1px solid #3b28b5;
+}
+
+.tag-pill-outline {
+    background-color: transparent;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+}
+
+.tag-pill-outline:hover {
+    border-color: #3b28b5;
+    color: #3b28b5;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.share-btn:hover {
+    border-color: #3b28b5;
+    color: #3b28b5;
+    background-color: #f9fafb;
+}
+
+.comment-form .form-control {
+    background-color: #f9fafb;
+    border: 1px solid transparent;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.comment-form .form-control:focus {
+    background-color: #fff;
+    border-color: rgba(59, 40, 181, 0.2);
+    box-shadow: 0 0 0 4px rgba(59, 40, 181, 0.05);
+    outline: none;
+}
+
+.hover-border-secondary:hover {
+    border-color: #6b7280 !important;
+}
+
+.transition-all {
+    transition: all 0.2s ease;
+}
+
+/* ==========================================================================
+   Announcement Modal Styles
+   ========================================================================== */
+.bg-brand-purple {
+    background-color: #3b28b5 !important;
+}
+
+.modal-content-custom {
+    max-width: 480px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2rem;
+    padding: 3.5rem 2.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #9ca3af;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.gift-icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: #f3f4f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    color: #374151;
+}
+
+.modal-logo {
+    margin-bottom: 2.5rem;
+}

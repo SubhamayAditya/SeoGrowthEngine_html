@@ -214,6 +214,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 10. Contact Us Form Submission
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent page reload
+            console.log('Contact form submitted via AJAX.');
+        });
+    }
+
+    // 11. Blog Comment Form Handling
+    const commentForm = document.getElementById('commentForm');
+    const commentStatus = document.getElementById('commentStatus');
+
+    if (commentForm && commentStatus) {
+        commentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Disable button
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Posting...';
+
+            // Simulate AJAX
+            setTimeout(() => {
+                commentForm.classList.add('d-none');
+                commentStatus.classList.remove('d-none');
+            }, 1000);
+        });
+    }
+
+    // Modal Close Interaction (for modal.html demo)
+    const modalCloseBtn = document.querySelector('.modal-close-btn');
+    const modalContent = document.querySelector('.modal-content-custom');
+
+    if (modalCloseBtn && modalContent) {
+        modalCloseBtn.addEventListener('click', () => {
+            modalContent.style.opacity = '0';
+            modalContent.style.transform = 'scale(0.95)';
+            modalContent.style.transition = 'all 0.3s ease';
+            setTimeout(() => {
+                modalContent.style.display = 'none';
+            }, 300);
+        });
+    }
 });
 
 /**
