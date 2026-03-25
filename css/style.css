@@ -1111,3 +1111,94 @@ article p {
 .modal-logo {
     margin-bottom: 2.5rem;
 }
+/* ==========================================================================
+   Leads Page Styles
+   ========================================================================== */
+.leads-page-container {
+    max-width: 1000px;
+}
+
+.leads-badge {
+    background-color: #f1f2f4 !important;
+    color: #6b7280;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50rem;
+    display: inline-block;
+}
+
+.leads-title {
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #050505;
+    letter-spacing: -1.5px;
+}
+
+.leads-content-wrapper p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 2rem;
+    max-width: 850px;
+}
+
+@media (max-width: 991.98px) {
+    .leads-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* ==========================================================================
+   Email Card & Report Section
+   ========================================================================== */
+.email-card {
+    background-color: #f8faff;
+}
+
+.email-card .form-control {
+    height: 60px;
+    padding-left: 1.5rem;
+}
+
+.email-card .form-control::placeholder {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+.report-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+}
+
+.report-list li::before {
+    content: " \;
+ position: absolute;
+ left: 0;
+ top: 0.7rem;
+ width: 6px;
+ height: 6px;
+ background-color: #9ca3af;
+ border-radius: 50%;
+}
+
+/* ==========================================================================
+   Phase 3: Contact Form Styles
+   ========================================================================== */
+.custom-input {
+    height: 55px;
+    padding-left: 1.25rem;
+}
+
+.custom-textarea {
+    padding: 1.25rem;
+    resize: none;
+}
+
+.contact-form-section .email-card {
+    background-color: #f1f5f9;
+}

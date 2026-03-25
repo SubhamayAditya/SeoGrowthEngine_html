@@ -294,3 +294,27 @@ function toggleFaq(element) {
         iconClose.style.display = 'block';
     }
 }
+
+// Leads Page Specific Scripts
+// Add logic here if interactive elements are added to leads.html
+
+
+// 12. Lead Contact Form (leads.html Phase 3)
+const leadContactForm = document.getElementById(" leadContactForm\);
+if (leadContactForm) {
+ leadContactForm.addEventListener(\submit\, (e) => {
+ e.preventDefault();
+ console.log(\Lead contact form submitted via AJAX.\);
+ const submitBtn = leadContactForm.querySelector(\button[type=\\submit\\\);
+ submitBtn.disabled = true;
+ submitBtn.innerText = \Sending...\;
+ setTimeout(() => {
+ submitBtn.innerText = \Sent!\;
+ leadContactForm.reset();
+ setTimeout(() => {
+ submitBtn.disabled = false;
+ submitBtn.innerText = \Send\;
+ }, 2000);
+ }, 1000);
+ });
+}
