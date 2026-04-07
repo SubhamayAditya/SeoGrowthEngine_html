@@ -300,21 +300,36 @@ function toggleFaq(element) {
 
 
 // 12. Lead Contact Form (leads.html Phase 3)
-const leadContactForm = document.getElementById(" leadContactForm\);
+const leadContactForm = document.getElementById("leadContactForm");
 if (leadContactForm) {
- leadContactForm.addEventListener(\submit\, (e) => {
- e.preventDefault();
- console.log(\Lead contact form submitted via AJAX.\);
- const submitBtn = leadContactForm.querySelector(\button[type=\\submit\\\);
- submitBtn.disabled = true;
- submitBtn.innerText = \Sending...\;
- setTimeout(() => {
- submitBtn.innerText = \Sent!\;
- leadContactForm.reset();
- setTimeout(() => {
- submitBtn.disabled = false;
- submitBtn.innerText = \Send\;
- }, 2000);
- }, 1000);
- });
+    leadContactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("Lead contact form submitted via AJAX.");
+        const submitBtn = leadContactForm.querySelector("button[type=\"submit\"]");
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Sending...";
+        setTimeout(() => {
+            submitBtn.innerText = "Sent!";
+            leadContactForm.reset();
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Send";
+            }, 2000);
+        }, 1000);
+    });
+}
+
+// 13. Pricing Toggle Logic
+const pricingToggles = document.querySelectorAll('.pricing-toggle-btn');
+if (pricingToggles.length > 0) {
+    pricingToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            // Remove active from all
+            pricingToggles.forEach(t => t.classList.remove('active'));
+            // Add active to clicked
+            this.classList.add('active');
+            
+            // Note: Add price updating logic here if prices need to change dynamically
+        });
+    });
 }

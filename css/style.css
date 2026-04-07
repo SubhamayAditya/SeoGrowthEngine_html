@@ -1176,14 +1176,14 @@ article p {
 }
 
 .report-list li::before {
-    content: " \;
- position: absolute;
- left: 0;
- top: 0.7rem;
- width: 6px;
- height: 6px;
- background-color: #9ca3af;
- border-radius: 50%;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 6px;
+    height: 6px;
+    background-color: #9ca3af;
+    border-radius: 50%;
 }
 
 /* ==========================================================================
@@ -1201,4 +1201,195 @@ article p {
 
 .contact-form-section .email-card {
     background-color: #f1f5f9;
+}
+
+/* ==========================================================================
+   Pricing Section
+   ========================================================================== */
+.pricing-wrapper {
+    background-color: #f6f8fb; /* Matching the light grayish-blue background in design */
+}
+
+.pricing-toggle-container {
+    background-color: #ffffff;
+    border-radius: 50rem;
+    display: inline-flex;
+    padding: 0.35rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.pricing-toggle-btn {
+    border: none;
+    background: transparent;
+    padding: 0.6rem 2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    border-radius: 50rem;
+    transition: all 0.3s ease;
+}
+
+.pricing-toggle-btn.active {
+    background-color: #2c293b; /* Dark pill background for Monthly */
+    color: #ffffff;
+}
+
+.badge-discount {
+    background-color: #ff6b6b; /* Reddish orange */
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50rem;
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    letter-spacing: 0.5px;
+}
+
+.badge-popular {
+    background-color: #ff6b6b;
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50rem;
+    margin-left: 0.75rem;
+}
+
+.pricing-card {
+    background-color: #ffffff;
+    border-radius: 1.25rem;
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.pricing-plan-name {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.pricing-price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1;
+    letter-spacing: -1.5px;
+}
+
+.pricing-currency {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    letter-spacing: 0;
+}
+
+.pricing-subtitle {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.btn-pricing-outline {
+    background: transparent;
+    border: 1px solid var(--border-nav);
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn-pricing-outline:hover {
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.feature-list-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.feature-list li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+}
+
+.feature-list li svg {
+    color: #22c55e; /* Green checkmark */
+    width: 16px;
+    height: 16px;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Compare Plans Section
+   ========================================================================== */
+.compare-section {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+.compare-title {
+    font-size: 2.75rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    color: var(--text-dark);
+}
+
+.compare-plan-header {
+    margin-bottom: 2rem;
+}
+
+.compare-table {
+    border-top: 1px solid var(--border-nav);
+}
+
+.compare-row {
+    border-bottom: 1px solid var(--border-nav);
+    padding: 1.5rem 0;
+    transition: background-color 0.2s ease;
+}
+
+.compare-row:hover {
+    background-color: rgba(0,0,0,0.01);
+}
+
+.compare-feature-name {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.compare-icon-check {
+    color: #22c55e;
+    width: 18px;
+    height: 18px;
+}
+
+.compare-icon-cross {
+    color: #ef4444;
+    width: 18px;
+    height: 18px;
 }
